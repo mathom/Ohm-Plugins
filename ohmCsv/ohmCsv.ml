@@ -24,7 +24,7 @@ let _cell_to_csv cell =
   
   if should_escape then 
     let _, escaped = BatString.replace ~str:cell ~sub:"\"" ~by:"\"\"" in
-    _quot |- View.str escaped |- _quot
+    _quot %> View.str escaped %> _quot
   else
     View.str cell 
 
